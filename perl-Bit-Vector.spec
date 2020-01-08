@@ -4,14 +4,14 @@
 #
 Name     : perl-Bit-Vector
 Version  : 7.4
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Summary  : ~
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Bit-Vector-lib = %{version}-%{release}
 Requires: perl-Bit-Vector-license = %{version}-%{release}
+Requires: perl-Bit-Vector-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Carp::Clan)
 
@@ -23,21 +23,11 @@ Package "Bit::Vector" Version 7.4
 %package dev
 Summary: dev components for the perl-Bit-Vector package.
 Group: Development
-Requires: perl-Bit-Vector-lib = %{version}-%{release}
 Provides: perl-Bit-Vector-devel = %{version}-%{release}
 Requires: perl-Bit-Vector = %{version}-%{release}
 
 %description dev
 dev components for the perl-Bit-Vector package.
-
-
-%package lib
-Summary: lib components for the perl-Bit-Vector package.
-Group: Libraries
-Requires: perl-Bit-Vector-license = %{version}-%{release}
-
-%description lib
-lib components for the perl-Bit-Vector package.
 
 
 %package license
@@ -48,14 +38,24 @@ Group: Default
 license components for the perl-Bit-Vector package.
 
 
+%package perl
+Summary: perl components for the perl-Bit-Vector package.
+Group: Default
+Requires: perl-Bit-Vector = %{version}-%{release}
+
+%description perl
+perl components for the perl-Bit-Vector package.
+
+
 %prep
 %setup -q -n Bit-Vector-7.4
+cd %{_builddir}/Bit-Vector-7.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -65,7 +65,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -74,7 +74,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Bit-Vector
-cp Artistic.txt %{buildroot}/usr/share/package-licenses/perl-Bit-Vector/Artistic.txt
+cp %{_builddir}/Bit-Vector-7.4/Artistic.txt %{buildroot}/usr/share/package-licenses/perl-Bit-Vector/be0627fff2e8aef3d2a14d5d7486babc8a4873ba
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -87,12 +87,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector.pod
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector/String.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Bit/Vector/String.pod
 
 %files dev
 %defattr(-,root,root,-)
@@ -100,10 +94,16 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Bit::Vector::Overload.3
 /usr/share/man/man3/Bit::Vector::String.3
 
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
-
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Bit-Vector/Artistic.txt
+/usr/share/package-licenses/perl-Bit-Vector/be0627fff2e8aef3d2a14d5d7486babc8a4873ba
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector.pod
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector/String.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Bit/Vector/String.pod
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
