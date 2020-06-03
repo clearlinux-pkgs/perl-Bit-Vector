@@ -4,7 +4,7 @@
 #
 Name     : perl-Bit-Vector
 Version  : 7.4
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Summary  : ~
@@ -100,10 +100,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector.pod
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector/String.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Bit/Vector/String.pod
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector.pod
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector/String.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Bit/Vector/String.pod
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
