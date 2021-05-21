@@ -100,10 +100,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector.pod
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector/String.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Bit/Vector/String.pod
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector.pod
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector/Overload.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector/Overload.pod
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector/String.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Bit/Vector/String.pod
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Bit/Vector/Vector.so
