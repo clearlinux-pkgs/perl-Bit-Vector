@@ -4,7 +4,7 @@
 #
 Name     : perl-Bit-Vector
 Version  : 7.4
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Summary  : ~
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Bit-Vector-license = %{version}-%{release}
 Requires: perl-Bit-Vector-perl = %{version}-%{release}
+Requires: perl(Carp::Clan)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Carp::Clan)
 
@@ -74,7 +75,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Bit-Vector
-cp %{_builddir}/Bit-Vector-7.4/Artistic.txt %{buildroot}/usr/share/package-licenses/perl-Bit-Vector/be0627fff2e8aef3d2a14d5d7486babc8a4873ba
+cp %{_builddir}/Bit-Vector-%{version}/Artistic.txt %{buildroot}/usr/share/package-licenses/perl-Bit-Vector/be0627fff2e8aef3d2a14d5d7486babc8a4873ba
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
