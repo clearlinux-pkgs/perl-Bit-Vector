@@ -4,7 +4,7 @@
 #
 Name     : perl-Bit-Vector
 Version  : 7.4
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz
 Summary  : ~
